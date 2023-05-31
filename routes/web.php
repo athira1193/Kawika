@@ -24,3 +24,5 @@ Route::get('students', [StudentController::class, 'index']);
 Route::get('students/list', [StudentController::class, 'getStudents'])->name('students.list');
 Route::get('new-student', [StudentController::class, 'createStudent']);
 Route::post('add-student', [StudentController::class, 'addStudent']);
+Route::get('student-edit/{id}', [StudentController::class, 'editStudent']);
+Route::post('edit-student', [StudentController::class, 'updateStudent']);
