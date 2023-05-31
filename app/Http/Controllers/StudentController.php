@@ -17,7 +17,7 @@ class StudentController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
-                    $actionBtn = '<a href="student-edit/' . $row->id . '" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
+                    $actionBtn = '<a href="student-edit/' . $row->id . '" class="edit btn btn-success btn-sm">Edit</a> <a class="delete btn btn-danger btn-sm" href="student-delete/' . $row->id . '">Delete</a>';
                     return $actionBtn;
                 })
                 ->addColumn('image', function($row){
@@ -84,7 +84,15 @@ class StudentController extends Controller
             }
             return redirect('/home');
         }
-
+    }
+    public function deleteStudent($id)
+    {
+        $student = Student::find($id);
+        if($student)
+        {
+            Student::where('id', $id)->delete();
+            return redirect('/home');
+        }
 
     }
 }

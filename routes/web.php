@@ -14,7 +14,7 @@ use App\Http\Controllers\StudentController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -26,3 +26,5 @@ Route::get('new-student', [StudentController::class, 'createStudent']);
 Route::post('add-student', [StudentController::class, 'addStudent']);
 Route::get('student-edit/{id}', [StudentController::class, 'editStudent']);
 Route::post('edit-student', [StudentController::class, 'updateStudent']);
+Route::get('student-delete/{id}', [StudentController::class, 'deleteStudent']);
+
