@@ -47,7 +47,7 @@
                 {data: 'number', name: 'number'},
                 {data: 'email', name: 'email'},
                 {data: 'class', name: 'class'},
-                {data: 'profile_pic', name: 'profile_pic'},
+                {data: 'image', name: 'image'},
                 {data: 'state', name: 'state'},
                 {data: 'country', name: 'country'},
                 {

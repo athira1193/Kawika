@@ -20,7 +20,11 @@ class StudentController extends Controller
                     $actionBtn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
                     return $actionBtn;
                 })
-                ->rawColumns(['action'])
+                ->addColumn('image', function($row){
+
+                    return '<img src="uploads/'.$row->profile_pic.' " width="100"/>';
+                })
+                ->rawColumns(['action','image'])
                 ->make(true);
         }
     }
